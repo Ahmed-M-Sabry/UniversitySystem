@@ -1,0 +1,32 @@
+﻿@model TraineeAndCourseWithResultViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details For Trainee</h1>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Course Name</th>
+        <th>Course Degree</th>
+    </tr>
+
+    <tr>
+        <td>@Model.id</td>
+        <td>@Model.Name</td>
+        <td>@Model.CourseName</td>
+        @if (Model.CourseResult > Model.MinDegree)
+        {
+            <td style="color : @ViewData["Green"]">@Model.CourseResult</td>
+        }
+        else
+        {
+            <td style="color : @ViewData["red"]">@Model.CourseResult</td>
+        }
+    </tr>
+
+
+</table>
+

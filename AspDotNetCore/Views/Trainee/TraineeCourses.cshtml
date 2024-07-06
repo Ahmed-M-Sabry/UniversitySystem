@@ -1,0 +1,30 @@
+﻿@model TraineeCoursesViewModel
+
+@{
+    ViewData["Title"] = "TraineeCourses";
+}
+
+<h1>@ViewData["name"] Courses</h1>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Course Name</th>
+        <th>Course Degree</th>
+    </tr>
+
+    @foreach (var item in Model.Courses)
+    {
+        <tr>
+            <td>@item.CourseNames</td>
+            @if (item.CourseResults > item.MinDegrees)
+            {
+                <td style="color : @ViewData["Green"]">@item.CourseResults</td>
+            }
+            else
+            {
+                <td style="color : @ViewData["red"]">@item.CourseResults</td>
+            }
+        </tr>
+    }
+
+</table>
