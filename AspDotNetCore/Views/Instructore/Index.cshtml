@@ -9,8 +9,13 @@
         <th>Id</th>
         <th>Name</th>
         <th>Image</th>
-        <th>Grade</th>
+        <th>Salary</th>
         <th>Address</th>
+        <th>Courses</th>
+        <th>Department</th>
+        <th>Edit</th>
+        <th>Detailes</th>
+        <th>Delete</th>
     </tr>
     @foreach(var item in Model)
     {
@@ -20,6 +25,15 @@
             <th>@item.Image</th>
             <th>@item.Salary</th>
             <th>@item.Address</th>
+            <th>@item.FkCourse.Name</th>
+            <th>@item.FkDepartment.Name</th>
+            <th><a href="/Instructore/Edit/@item.id">Edit</a></th>
+            <th><a href="/Instructore/Detailes/@item.id">Detailes</a></th>
+            <th><a href="/Instructore/Delete/@item.id">Delete</a></th>
+
         </tr>
     }
+    
 </table>
+
+<a href="/Instructore/Create">Add New</a>

@@ -1,0 +1,38 @@
+﻿@model Instructore
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form method="post" action="CreateNew">
+    <div>
+    <lable>Name</lable>
+    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+    </div>
+    <div>
+        <lable>Salary</lable>
+        <input type="number" name="Salary" class="form-control  " value="@Model.Salary" />
+    </div>
+    <div>
+        <lable>Image</lable>
+        <input type="text" name="Image" class="form-control  " value="@Model.Image" />
+    </div>
+    <div>
+        <lable>Address</lable>
+        <input type="text" name="Address" class="form-control  " value="@Model.Address" />
+    </div>    
+    <div>
+    <div>
+        <lable>Department</lable>
+            <input type="number" name="Department_id" class="form-control  " value="@Model.Department_id" />
+    </div>
+    <div>
+        <lable>Course</lable>
+            <input type="number" name="Course_id" class="form-control  " value="@Model.Course_id" />
+    </div>
+    <input type="submit" value="Add" class="btn btn-success"/>
+
+</form>
+
+<a href="/Instructore/index">Index</a>

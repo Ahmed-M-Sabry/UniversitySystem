@@ -1,0 +1,63 @@
+﻿@model Instructore
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<form method="post" action="/Instructore/SaveEdit/@Model.id">
+    <div>
+        <lable>Name</lable>
+        <input type="text" name="Name" class="form-control" value="@Model.Name" />
+    </div>
+    <div>
+        <lable>Salary</lable>
+        <input type="number" name="Salary" class="form-control  " value="@Model.Salary" />
+    </div>
+    <div>
+        <lable>Image</lable>
+        <input type="text" name="Image" class="form-control  " value="@Model.Image" />
+    </div>
+    <div>
+        <lable>Address</lable>
+        <input type="text" name="Address" class="form-control  " value="@Model.Address" />
+    </div>
+    <div>
+    <div>
+            <lable>Department</lable>
+            <select name="Department_id" class="form-control">
+                @foreach (var dept in @ViewBag.Departments)
+                {
+                    if (dept.id == @Model.Department_id)
+                    {
+                        <option value="@dept.id" selected>@dept.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@dept.id">@dept.Name</option>
+                    }
+                }
+                </select>
+    </div>
+    <div>
+            <lable>Course</lable>
+            <select name="Course_id" class="form-control">
+                @foreach (var course in @ViewBag.Courses)
+                {
+                    if (course.id == @Model.Course_id)
+                    {
+                        <option value="@course.id" selected>@course.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@course.id">@course.Name</option>
+                    }
+                }
+            </select>
+    </div>
+        <input type="submit" value="Add" class="btn btn-success" />
+
+</form>
+
+<a href="/Instructore/index">Index</a>
