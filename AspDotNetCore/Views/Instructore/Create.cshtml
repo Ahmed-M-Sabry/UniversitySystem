@@ -1,4 +1,6 @@
 ﻿@model Instructore
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     ViewData["Title"] = "Create";
 }
@@ -7,8 +9,8 @@
 
 <form method="post" action="CreateNew">
     <div>
-    <lable>Name</lable>
-    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" class="form-control  " />
     </div>
     <div>
         <lable>Salary</lable>
